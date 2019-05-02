@@ -1,4 +1,4 @@
-package main
+package Arrays
 
 import (
 	"bufio"
@@ -10,20 +10,22 @@ import (
 )
 
 // Complete the hourglassSum function below.
-func hourglassSum(arr [][]int32, writer *bufio.Writer) int32 {
+func hourglassSum(arr [][]int32) int32 {
 
 	var maxHgSumVal int32
 
-	for i := 0; i <= 3; i++ {
-		for j := 0; j <= 3; j++ {
+	for i := 0; i < 4; i++ {
+		for j := 0; j < 4; j++ {
 			calHgSumVal := arr[i][j] + arr[i][j+1] + arr[i][j+2] + arr[i+1][j+1] +
 				arr[i+2][j] + arr[i+2][j+1] + arr[i+2][j+2]
+			if (i == 0) && (j == 0) {
+				maxHgSumVal = calHgSumVal
+			}
 			if maxHgSumVal < calHgSumVal {
 				maxHgSumVal = calHgSumVal
 			}
 		}
 	}
-
 	return maxHgSumVal
 }
 
@@ -56,7 +58,7 @@ func main() {
 		arr = append(arr, arrRow)
 	}
 
-	result := hourglassSum(arr, writer)
+	result := hourglassSum(arr)
 
 	fmt.Fprintf(writer, "%d\n", result)
 
