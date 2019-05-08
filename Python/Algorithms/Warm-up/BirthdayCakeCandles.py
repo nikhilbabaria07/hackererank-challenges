@@ -1,17 +1,13 @@
 #!/bin/python3
 
-import math
 import os
-import random
-import re
-import sys
+
 
 # Complete the birthdayCakeCandles function below.
 def birthdayCakeCandles(ar):
-
     ar.sort();
     arLen = len(ar);
-    maxVal = ar[arLen-1];
+    maxVal = ar[arLen - 1];
     tallestCandles = 0;
 
     for i in range(arLen):
@@ -19,6 +15,7 @@ def birthdayCakeCandles(ar):
             tallestCandles += 1
 
     return tallestCandles
+
 
 if __name__ == '__main__':
     fptr = open(os.environ['OUTPUT_PATH'], 'w')
