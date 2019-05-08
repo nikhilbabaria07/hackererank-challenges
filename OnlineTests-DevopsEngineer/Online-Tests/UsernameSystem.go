@@ -34,7 +34,9 @@ func usernamesSystem(u []string) []string {
 
 	for _, v := range nameOcc {
 		if v.occ != 0 {
-			res = append(res, v.name, strconv.Itoa(v.occ))
+			res = append(res, v.name+strconv.Itoa(v.occ))
+			fmt.Println(res)
+
 		} else {
 			res = append(res, v.name)
 		}
