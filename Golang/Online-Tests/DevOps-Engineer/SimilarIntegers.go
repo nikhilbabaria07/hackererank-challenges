@@ -1,6 +1,9 @@
 package main
 
-import "fmt"
+import (
+	"fmt"
+	"strconv"
+)
 
 // you can also use imports, for example:
 // import "fmt"
@@ -20,19 +23,24 @@ func factorial(n int) int {
 func Solution2(N int) int {
 	// write your code in Go 1.4
 	strN := string(N)
-	byteN := []byte(strN)
-	strLen := len(strN)
-	tots := factorial(strLen)
-	var a [100]int
+	strN1, _ := strconv.Atoi(string(N))
 
-	for x := 0; x < strLen; x++ {
-		a[byteN[x]]++
-	}
+	fmt.Println(strN)
+	fmt.Println(strN1)
 
-	for x := 0; x < strLen; x++ {
-		tots = tots / factorial(a[x])
-	}
-	return tots
+	//byteN := []byte(strN)
+	//strLen := len(strN)
+	//tots := factorial(strLen)
+	//var a [100]int
+	//
+	//for x := 0; x < strLen; x++ {
+	//	a[byteN[x]]++
+	//}
+	//
+	//for x := 0; x < strLen; x++ {
+	//	tots = tots / factorial(a[x])
+	//}
+	return 0
 }
 
 func main() {
